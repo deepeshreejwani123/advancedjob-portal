@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html{
+  height: 100%;
+  margin: 0;
+  font-family: verdana;
+  background-color:black;
+}
+*{
+  box-sizing: border-box;
+}
+
+#blurdiv{
+  background-image:url('image4.jpg');
+  filter: blur(7px);
+  height: 300%; 
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment:fixed;
+  overflow:scroll;
+}
+#maindiv{
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  border: 3px solid black;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index:3;
+  width: 90%;
+  height:280%;
+  text-align: center;
+}
+input[type=text] {
+  width: 40%;
+  padding: 8px 10px;
+  margin: 5px 25px;
+  background-color:transparent;
+  font-weight:bold;
+  font-size:20px;
+  border: 3px solid black;
+}
+input[type=number]{
+  width:30%;
+  padding: 8px 10px;
+  border: 3px solid black;
+  margin: 5px 35px;
+   font-weight:bold;
+  background-color:transparent;
+  font-size:20px;
+}
+input[type=date]{
+  width:30%;
+  padding: 5px 10px;
+  border: 3px solid black;
+  margin: 5px 160px;
+   font-weight:bold;
+  background-color:transparent;
+  font-size:20px;
+  color:white;
+}
+input[type=email]{
+  width:40%;
+  padding: 8px 10px;
+  margin: 5px 25px;
+   font-weight:bold;
+   border: 3px solid black;
+  background-color:transparent;
+  font-size:20px;
+}
+::placeholder{
+  color:white;
+}
+input[type=submit]{
+  width:120px;
+  background-color:transparent;
+  font-size:30px;
+  color:white;
+  height:60px;
+  margin-left:-15px;
+  cursor:pointer;
+  border-color:transparent;
+}
+
+#files{
+   background-color:transparent;
+  padding: 5px 8px;
+  cursor: pointer;
+  text-shadow: 1px 1px black;
+  font-weight:bold;
+  font-size: 20px;
+}
+</style>
+<title>GIVE YOUR RESUME</title>
+</head>
+<body>
+<div id="blurdiv"></div>
+<div id="maindiv">
+ <form action="submittion.php" target="-self" method="POST" enctype="multipart/form-data">
+<legend style="font-size:50px; text-align:center; color:rgb(0, 0,255);"><strong>SUBMIT YOUR RESUME</strong></legend><br/><br/>
+<legend style="font-size:40px; text-align:center; color:rgba(255, 255, 169);">
+<strong>Personal Information</strong></legend><br/><br/>
+<div class="j2">
+<legend style="font-size:30px; color:rgb(25, 31, 5);"><strong>INTRODUCTION</strong></legend>
+<ul type="none">
+<li><input type="text" name="firstname" placeholder="First Name" size="50" required>
+<input type="text" name="lastname" placeholder="Last Name" size="50" required></li><br/>
+<li><input type="number" name="age" placeholder="Age(minimum 21 years)" min="21" required>
+<input type="date" placeholder="Date Of Birth" name="dob" required></li><br/>
+<li><input type="email" placeholder="Email" name="email">
+<input list="gender" name="gender" size="50" placeholder="Gender" style="background-color:transparent; font-weight:bold;  border: 3px solid black;font-size:20px; width:40%; padding: 8px 10px; margin: 5px 25px;" required>
+<datalist id="gender">
+  <option value="Male">
+  <option value="Female">
+  <option value="Transgender"><datalist></li>
+</ul>
+</div>
+<div>
+<legend style="font-size:30px; color:rgb(25, 31, 5);">CURRENT LOCATION</legend>
+<ul type="none">
+<li><input type="text" name="Caddress" placeholder="Address" required></li><br/>
+<li><input type="text" name="Ccity" placeholder="City" size="50" required></li><br/>
+<li><input type="text" name="Cstate" placeholder="State" size="50" required></li><br>
+<li><input type="text" name="Ccountry" size="50" placeholder="Country"  required>
+</li><br/>
+</ul>
+</div>
+<div>
+<legend style="font-size:30px; color:rgb(25, 31, 5);">JOB PREFERRED</legend>
+<ul type="none">
+<li><input type="text" name="stream" required placeholder="Stream Perference"></li><br/>
+<li><input type="text" name="Jcountry" required size="50" placeholder="Country" style="background-color:transparent; font-weight:bold; font-size:20px; width:40%; padding: 8px 10px; margin: 5px 25px;">
+</li><br/>
+</ul>
+</div>
+<div>
+<legend style="font-size:30px; color:rgb(25, 31, 5);">EDUCATION QUALIFICATIONS</legend><br/>
+<legend style="font-size:30px; color:rgb(25, 31, 5); margin:0px 25px;font-weight:bold;">Percentage In:-</legend>
+<ul type="none">
+<li><input type="text" name="class10" placeholder="CLASS 10th" required></li><br/>
+<li><input type="text" name="class12" placeholder="Class 12th"  required></li><br/>
+</ul>
+</div>
+<div>
+<legend style="font-size:30px; color:rgb(25, 31, 5);">COLLEGE DETAILS</legend><br/>
+<ul type="none">
+<li><input type="text" name="clgname" required placeholder="College Name"></li><br/>
+<li><input type="text" name="clgadd" required placeholder="College Address"></li><br/>
+<li><input type="number" name="yop" required placeholder="Year Of Passing" min="1990" max="2019"></li><br/>
+</ul>
+</div>
+<div>
+<legend style="font-size:30px; color:rgb(25, 31, 5);">SKILLS</legend><br/>
+<li><input type="text" name="skills" required placeholder="Skills"></li><br/>
+</ul>
+</div>
+<br>
+<ul type="none">
+<legend style="font-size:30px; color:rgb(25, 31, 5);">UPLOAD YOUR CV(pdf format max.size 500KB)</legend><br/>
+<li><input type="file" id="files" required name="f1" accept="application/pdf"></li><br/>
+<input type="submit"/>
+</form>
+</div>
+</body>
+</html>
